@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="136dp"
         android:text="ClickerGame"
         android:textColor="@color/black"
         android:textSize="40sp"
@@ -82,6 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReset"
         app:srcCompat="@drawable/bbh" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
