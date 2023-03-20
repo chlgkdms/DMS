@@ -7,9 +7,11 @@ import static android.view.MotionEvent.ACTION_HOVER_MOVE;
 import static android.view.MotionEvent.ACTION_MOVE;
 import static android.view.MotionEvent.ACTION_POINTER_DOWN;
 import static com.example.clickergame.R.drawable.popcat_1;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -24,11 +26,16 @@ public class MainActivity extends AppCompatActivity {
     TextView result;
     int sum;
     Button reset;
+    private Vibrator vibrator;
+
+    @SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         imgPopCat = findViewById(R.id.img_cat);
         result = findViewById(R.id.tv_result);
@@ -42,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
                         imgPopCat.setImageResource(R.drawable.popcat_2);
                         sum = sum + 1;
                         result.setText(String.valueOf(sum));
-
-                        break;
+                        vibrator.vibrate(1000);
+                        return true;
                     } case ACTION_UP: {
                         imgPopCat.setImageResource(popcat_1);
 
-                        break;
+                        return true;
                     }
                 }
                 return true;
