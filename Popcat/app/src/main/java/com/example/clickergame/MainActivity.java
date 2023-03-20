@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -60,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        if (sum > 100) {
+            Toast.makeText(this, "100을 달성 하셨습니다!", Toast.LENGTH_SHORT).show();
+        }
 
         reset.setOnClickListener(view -> {
                     sum = 0;
