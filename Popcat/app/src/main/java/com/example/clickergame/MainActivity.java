@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private Vibrator vibrator;
 
     @SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
