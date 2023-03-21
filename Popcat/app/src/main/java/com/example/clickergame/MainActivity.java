@@ -62,10 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (sum > 100) {
-            Toast.makeText(this, "100을 달성 하셨습니다!", Toast.LENGTH_SHORT).show();
-        }
-
         reset.setOnClickListener(view -> {
                     sum = 0;
                     result.setText(String.valueOf(sum));
